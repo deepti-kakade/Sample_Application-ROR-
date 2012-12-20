@@ -1,3 +1,21 @@
 <% provide(:title, 'Sign up') %>
-<h1>Sign up</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@user) do |current_user| %>
+
+      <%= current_user.label :name %>
+      <%= current_user.text_field :name %>
+
+      <%= current_user.label :email %>
+      <%= current_user.text_field :email %>
+
+      <%= current_user.label :password %>
+      <%= current_user.password_field :password %>
+
+      <%= current_user.label :password_confirmation, "Confirmation" %>
+      <%= current_user.password_field :password_confirmation %>
+
+      <%= current_user.submit "Create my account", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>
