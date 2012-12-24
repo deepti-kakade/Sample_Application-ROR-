@@ -1,5 +1,4 @@
 <% provide(:title, @user.name) %>
-<!--<%= @user.name %>, <%= @user.email %>-->
 <div class="row">
   <aside class="span4">
     <section>
@@ -8,8 +7,12 @@
         <%= @user.name %>
       </h1>
     </section>
+    <section>
+      <%= render 'shared/states' %>
+    </section>
   </aside>
   <div class="span8">
+     <%= render 'follow_form' if signed_in? %>
     <%#= render :partial => 'shared/micropost_form' %>
      <%#= render 'shared/user_info' %>
     <% if @user.microposts.any? %>
