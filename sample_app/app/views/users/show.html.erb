@@ -10,10 +10,14 @@
     </section>
   </aside>
   <div class="span8">
+    <%#= render :partial => 'shared/micropost_form' %>
+     <%#= render 'shared/user_info' %>
     <% if @user.microposts.any? %>
       <h3>Microposts (<%= @user.microposts.count %>)</h3>
       <ol class="microposts">
         <%= render @microposts %>
+
+        <%#= render :partial => 'shared/micropost_form', :locals => {:micropost => @microposts} %>
       </ol>
       <%= will_paginate @microposts %>
     <% end %>

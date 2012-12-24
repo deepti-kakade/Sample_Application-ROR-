@@ -1,0 +1,2 @@
+module MicropostsControllerHelper
+end
